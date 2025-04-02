@@ -45,5 +45,5 @@ $filme = [
 
 echo $filme["ano"];
 
-var_dump($notas);
-sort($notas);
+$filmeComoStringJson = json_encode($filme);
+file_put_contents(__DIR__ . '/filme.json', $filmeComoStringJson);
