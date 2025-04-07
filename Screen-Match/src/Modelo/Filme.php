@@ -3,6 +3,19 @@
 class Filme {
     public string $nome;
     public int $anoLancamento;
-    public float $nota;
+    public array $notas = [];
     public string $genero;
+
+    function avalia(float $nota): void
+    {
+        $this->notas[] = $nota;
+    }
+
+    function media(): float
+    {
+        $somaNotas = array_sum($this->notas);
+        $quantidadeNotas = count($this->notas);
+
+        return $somaNotas / $quantidadeNotas;
+    }
 }
